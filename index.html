@@ -15,48 +15,89 @@
     <title>Quiz | Your Spirit Animal</title>
 </head>
 <body>
-    <div class="container myClass">
-    <form name="myform">
-        <h1>What is a spirit animal?</h1>
+    <div class="container myClass" id="intro">
+        <form name="myform">
+      <h1>What is a spirit animal?</h1>
         <p>In certain cultures, spirit animal refers to a spirit which helps guide or protect a person 
             on a journey and whose characteristics that person shares or embodies.
-            Can you choose what your spirit animal is?
             Spirit animals can help us feel more in tune with the earth and guide us to make the right decisions in life.
             <br>
             You cannot just choose a spirit animal, though; according to ancient beliefs, your spirit animal chooses you.
-            <br>
-            Are you ready to find out what is YOUR spirit animal?</p>
+            Much of the process of identifying your spirit animal involves paying attention to both your past and present.
+            It is a process of developing your inner knowledge and spiritual understanding. Are you ready to find out what is YOUR spirit animal?</p>
             <div class="container text-center">
                 <div class="row">
-                    <div class="cont col-md-3">
-                        <img class ="img-fluid p-1" src="Images/daniel-diesenreither-z4yzSsH5EAo-unsplash.jpg" alt="Bear sneaking">
-                        <div class="centered">
-                            URSUS (BEAR) FAMILY
+                    <div class="flip-card g-2 col-md-3 mx-auto">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img class ="img" src="Images/daniel-diesenreither-z4yzSsH5EAo-unsplash.jpg" alt="Bear sneaking">
+                            </div>
+                            <div class="flip-card-back" id="ursus">
+                                <p class="flipCardText">URSUS (BEAR) FAMILY</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="cont col-md-3">
-                        <img class="img-fluid p-1" src="Images/brandon-pizarro-y3XGEs2uiaY-unsplash.jpg" alt="Eagle flying">
-                        <div class="centered">
-                            AVIS (BIRD) FAMILY
+                    <div class="flip-card g-2 col-md-3 mx-auto">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                            <img class ="img" src="Images/brandon-pizarro-y3XGEs2uiaY-unsplash.jpg" alt="Eagle flying">
+                        </div>
+                        <div class="flip-card-back" id="avis">
+                            <p class="flipCardText">AVIS (BIRD) FAMILY</p>
                         </div>
                     </div>
-                    <div class="cont col-md-3">
-                        <img class="img-fluid p-1" src="Images/philipp-pilz-QZ2EQuPpQJs-unsplash.jpg" alt="Wolf howling">
-                        <div class="centered">
-                            CANINE FAMILY
+                </div>
+                <div class="flip-card g-2 col-md-3 mx-auto">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img class ="img" src="Images/philipp-pilz-QZ2EQuPpQJs-unsplash.jpg" alt="Wolf howling">
+                        </div>
+                        <div class="flip-card-back" id="canine">
+                            <p class="flipCardText">CANINE FAMILY</p>
                         </div>
                     </div>
-                    <div class="cont col-md-3">
-                        <img class="img-fluid p-1" src="Images/keyur-nandaniya-B0VdY1ydF-Q-unsplash.jpg" alt="Lion proudly walking">
-                        <div class="centered">
-                            FELINE FAMILY
+                </div>
+                <div class="flip-card g-2 col-md-3 mx-auto">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img class ="img" src="Images/keyur-nandaniya-B0VdY1ydF-Q-unsplash.jpg" alt="Lion proudly walking">
+                        </div>
+                        <div class="flip-card-back" id="feline">
+                                <p class="flipCardText">FELINE FAMILY</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <input type="submit" class="btn btn-dark btn-lg border-light-subtle fs-3" value="Start the Quiz" onclick="">
-
+        </div>
+        <input type="submit" class="quizStart btn btn-dark btn-lg border-light-subtle fs-3" value="Start the Quiz" onclick="quizStart()">
+    </div>
     </form>
+    </div>
+    <div class="container" id="quiz">
+        <div class="quiz-header">
+            <h3 id="question">
+                Question text?
+            </h3>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="answer1" value="1" class="answer">
+                    <label for="answer1" id="answer1Text">Answer 1</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="answer2" value="2" class="answer">
+                    <label for="answer2" id="answer2Text">Answer 2</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="answer3" value="3" class="answer">
+                    <label for="answer3" id="answer3Text">Answer 3</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="answer4" value="4" class="answer">
+                    <label for="answer4" id="answer4Text">Answer 4</label>
+                </li>
+            </ul>
+            <button id="submit" class="quizProceed btn btn-dark btn-lg border-light-subtle fs-3">Submit answer</button>
+        </div>
     </div>
 </body>
 </html>

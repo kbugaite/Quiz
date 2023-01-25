@@ -1,33 +1,80 @@
-body {
-    background-image: url('/images/abstract-heavy-blue-haze-liquid.jpg');
+ body {
+   background-image: url('/images/abstract-heavy-blue-haze-liquid.jpg');
     background-size: cover;
   }
-.img-fluid{
+.img {
   width: 250px;
-  height: 300px;
+  height: 400px;
   border-radius: 10px;
 }
-.img-fluid:hover{
-  opacity: 0.75;
+ /* FLIP CARDS - styles */
+ .flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 400px;
+  perspective: 1000px;
 }
-.cont {
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
   position: relative;
-  text-align: center;
-  color: white;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
 }
-.centered {
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari support*/
+  backface-visibility: hidden;
+}
+
+/* Styles of the back side of the flip-card*/
+.flip-card-back {
+  color: aliceblue;
+  background-size: cover;
+  font-size: 2em;
+  font-family: 'Sora', sans-serif;
+  transform: rotateY(180deg);
+  border-radius: 10px;
+} 
+/* Different colour backgrounds for different classes of animals */
+#ursus{
+  background-image: url('/images/bia-w-a-SmkZz4aR-Ng-unsplash - yellow.jpg');
+}
+#avis{
+  background-image: url('/images/bia-w-a-SmkZz4aR-Ng-unsplash - green.jpg');
+}
+#canine{
+  background-image: url('/images/bia-w-a-SmkZz4aR-Ng-unsplash - blue.jpg');
+}
+#feline{
+  background-image: url('/images/bia-w-a-SmkZz4aR-Ng-unsplash - red.jpg');
+}
+/* Styles of the text on the back of the flip-card */
+.flipCardText{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Sora', sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
   color: aliceblue;
 }
-.myClass {
+/*Styles of the main introduction page div element*/
+#intro {
     background-color: rgba(115, 171, 210, 0.65);
     margin: auto;
-    display: flex;
+    display: none; /* THIS HIDES THE INDEX PAGE (with display: none) */
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -38,12 +85,11 @@ body {
   }
 h1 {
     font-family: 'Eagle Lake', cursive;
-    font-size: larger;
   }
 p {
     font-family: 'Sora', sans-serif;
     color: aliceblue;
-    font-size: 1.5em;
+    font-size: 1.25em;
     padding: 1em 2em 1em 2em;
   }
 .btn {
@@ -51,15 +97,39 @@ p {
     margin-top: 1.5em;
     font-family: 'Sora', sans-serif;
 }
-.flip-box-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
+
+/*Styles of the quiz elements*/
+#quiz {
+  display: flex; /* THIS SHOWS THE QUIZ PAGE (with display: flex) */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
   text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+  margin: auto;
+  padding: 3em 6em 3em 6em;
+  border-radius: 10px;
+  background-color: rgba(115, 171, 210, 0.65);
 }
-.flip-box:hover .flip-box-inner {
-  transform: rotateY(180deg);
-  opacity: 0.75;
+.quiz-header {
+  padding: 4em;
+}
+#question {
+  font-family: 'Eagle Lake', cursive;
+  font-size: 3em;
+  padding-bottom: 1.25em;
+}
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.5em;
+  color: aliceblue;
+  margin-top: 1rem;
+}
+ li label {
+  cursor: pointer;
 }
