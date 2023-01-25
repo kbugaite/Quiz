@@ -1,3 +1,65 @@
 body {
-    background-color: black;
+    background-image: url('/images/abstract-heavy-blue-haze-liquid.jpg');
+    background-size: cover;
   }
+.img-fluid{
+  width: 250px;
+  height: 300px;
+  border-radius: 10px;
+}
+.img-fluid:hover{
+  opacity: 0.75;
+}
+.cont {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Sora', sans-serif;
+  font-size: 2em;
+  color: aliceblue;
+}
+.myClass {
+    background-color: rgba(115, 171, 210, 0.65);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 3em;
+  
+  }
+h1 {
+    font-family: 'Eagle Lake', cursive;
+    font-size: larger;
+  }
+p {
+    font-family: 'Sora', sans-serif;
+    color: aliceblue;
+    font-size: 1.5em;
+    padding: 1em 2em 1em 2em;
+  }
+.btn {
+    padding: 1em;
+    margin-top: 1.5em;
+    font-family: 'Sora', sans-serif;
+}
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+  opacity: 0.75;
+}
