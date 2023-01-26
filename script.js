@@ -8,7 +8,7 @@ const quizQuestions = [
     answer4:   "Participating in sports",
 },
 {
-    question: "What is your favourite foods?",
+    question: "What is your favourite food?",
     answer1:   "Any food whatsoever",
     answer2:   "Vegan/vegetarian foods",
     answer3:   "Hearty meals with meat/fish",
@@ -18,7 +18,7 @@ const quizQuestions = [
     question: "How many friends do you have?",
     answer1:   "I have a lot of friends",
     answer2:   "I have a few friends",
-    answer3:   "I have a few close friends",
+    answer3:   "I have a few very close friends",
     answer4:   "I go by 'Keep your friends close, but your enemies closer'",
 },
 {
@@ -43,7 +43,7 @@ const quizQuestions = [
     answer4:   "Red",
 },
 {
-    question: "What is your favourite music genres?",
+    question: "What are your favourite music genres?",
     answer1:   "Pop/Electronic",
     answer2:   "Rock/Hard Rock",
     answer3:   "Alternative/Indie",
@@ -71,7 +71,7 @@ const answer3Text = document.getElementById("answer3Text");
 const answer4Text = document.getElementById("answer4Text");
 
 const submitButton = document.getElementById("submit");
-//This variable hides the quiz when the page loads and ONLY shows it when the "Start Quiz" button is clicked
+
 quiz.style.display = "none"
 
 //These variables show the current question and the score that later gets calculated in the Event listener
@@ -130,7 +130,7 @@ submitButton.addEventListener("click", () => {
         if (score <= 12){ quiz.innerHTML = `<div class="container">
         <div class="row d-flex justify-content-center align-content-center">
         <h2>You scored ${score}. This indicates that your spirit animal is:</h2>
-        <p> Your soul has a canine companion: a wolf, coyote or a dog.
+        <p> A canine: a wolf, a coyote or a dog.
         <br>
         People describe you as a faithful friend, loyal and even protective.
         You know how to enjoy life's simple pleasures. But most importantly, you love with all of your heart.
@@ -145,7 +145,7 @@ submitButton.addEventListener("click", () => {
         else if (score >13 && score < 18){ quiz.innerHTML = `<div class="container">
         <div class="row d-flex justify-content-center align-content-center">
         <h2>You scored ${score}. This indicates your spirit animal is:</h2>
-        <p> This indicates that your soul has an avian companion: an eagle, flamingo or a crow.
+        <p> An avian companion: an eagle, a flamingo or a crow.
         <br>
         Bird Spirit is the perfect symbol for freedom and perspective, because they fly high into the sky freely and “see” the bigger picture.
         Bird's are not fighters – they lean toward self-survival and adaptation over a fist-to-cuffs any day.
@@ -160,7 +160,7 @@ submitButton.addEventListener("click", () => {
         else if (score >19 && score < 24){ quiz.innerHTML = `<div class="container">
         <div class="row d-flex">
         <h2 >You scored ${score}. This indicates your spirit animal is:</h2>
-        <p> This indicates that your soul has a feline companion: a lion, tiger or a house cat.
+        <p> A feline companion: a lion, a tiger or a house cat.
         <br>
         The cat symbolizes grace, intelligence, cunning, and independence. It is a fascinating animal that cultures around the world have long revered. They are not content to be controlled or tamed, preferring to live on their own terms.
         <br>
@@ -177,7 +177,7 @@ submitButton.addEventListener("click", () => {
         else { quiz.innerHTML = `<div class="container">
         <div class="row d-flex justify-content-center align-content-center">
         <h2>You scored ${score}. This indicates your spirit animal is:</h2>
-        <p> This indicates that your soul has an ursus companion: a black, polar bear or a panda.
+        <p> An ursus companion: a black bear, a polar bear or a panda.
         <br>
         When Bear as a Spirit Animal comes to stand beside you, there’s the assurance of renewed power and courage.
         Whatever adversity you face, Bear holds you firm and keeps you grounded until hardships pass. Bear Spirit is restorative and recuperative.

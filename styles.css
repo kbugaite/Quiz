@@ -20,7 +20,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.5s;
+  transition: transform 1s;
   transform-style: preserve-3d;
 }
 
@@ -78,7 +78,7 @@
     justify-content: center;
     text-align: center;
     border-radius: 10px;
-    margin-top: 30px;
+    margin-top: 6rem;
     padding: 3em;
   
   }
@@ -130,4 +130,21 @@ ul li {
 }
  li label {
   cursor: pointer;
+}
+/*Styles of links on the flip cards*/
+a {
+  transition: 0.35s;
+}
+a:link { 
+  color: rgb(134, 199, 255);
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(82, 171, 249);
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(170, 170, 170);
+  text-decoration: none;
+  font-size: 120%;
 }
