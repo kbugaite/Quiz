@@ -60,13 +60,19 @@ const quizQuestions = [
 let currentQuizIndex = 0;
 //Here we select the elements from the HTML file and assign them to variables for later use
 const quiz = document.getElementById("quiz");
+
 const answerEl = document.querySelectorAll(".answer");
+
 const questionElements = document.getElementById("question");
+
 const answer1Text = document.getElementById("answer1Text");
 const answer2Text = document.getElementById("answer2Text");
 const answer3Text = document.getElementById("answer3Text");
 const answer4Text = document.getElementById("answer4Text");
+
 const submitButton = document.getElementById("submit");
+//This variable hides the quiz when the page loads and ONLY shows it when the "Start Quiz" button is clicked
+quiz.style.display = "none"
 
 //These variables show the current question and the score that later gets calculated in the Event listener
 
@@ -84,6 +90,7 @@ function loadQuiz() {
     answer3Text.innerText = currentQuizData.answer3
     answer4Text.innerText = currentQuizData.answer4
 };
+
 //This function makes sure that the answers are not selected when the next question is loaded
 function deselectAnswers() {
     answerEl.forEach(answerEl => (answerEl.checked = false));
@@ -101,30 +108,19 @@ function getSelected() {
 
     return answer
 }
+//This variable sets the score to 0
 let score = 0;
-
-
-//SCORE TRACKER
-
-
-/*
-function scoreCalc(quizQuestions[currentQuizIndex], currentQuizIndex, quizQuestions) {
-    return score = score + parseInt(document.getElementById("answer1").getAttribute("value"))
-} else if (answer == quizQuestions[currentQuizIndex].answer2) {
-    return score = score + parseInt(document.getElementById("answer2").getAttribute("value"))
-} else if (answer == quizQuestions[currentQuizIndex].answer3) {
-    return score = score + parseInt(document.getElementById("answer3").getAttribute("value"))
-} else if (answer == quizQuestions[currentQuizIndex].answer4) {
-    return score = score + parseInt(document.getElementById("answer4").getAttribute("value"))
-} */
-
-
-
 
 //AN EVENT LISTENER THAT TAKES THE USER TO ANOTHER QUESTION AND SHOWS THE RESULT
 submitButton.addEventListener("click", () => {
+
     const answer = getSelected()
-    console.log("It's working")
+
+    const usersAnswer = document.getElementById(answer)
+//SCORE TRACKER - This adds the value attribute (in the range 1-4 as an integer number) of the selected answer to the score
+    score = score + parseInt(usersAnswer.value)
+    console.log("Score:" + score)
+
     if (answer) {
         currentQuizIndex++
         if (currentQuizIndex < quizQuestions.length) {
@@ -196,17 +192,6 @@ submitButton.addEventListener("click", () => {
         <button class="btn col-3 btn-dark btn-lg border-light-subtle fs-3" onclick="location.reload()">Reload</button>
         </div>
         </div>` }
-            /*Text to add: `<div class="col">
-            <h2>You scored ${score}. This indicates your spirit animal is:</h2>
-            <p>SCORE 0-12: Your soul has a canine companion: a wolf, coyote or a dog.
-            <br>
-            SCORE 13-18: Your soul has an avian companion: an eagle, flamingo or a crow.
-            <br>
-            SCORE 19-24: Your soul has a feline companion: a lion, tiger or a house cat.
-            <br>
-            SCORE 25-32: Your soul has a ursus companion: a black, polar bear or a panda.</p>
-            <button class="quizProceed btn btn-dark btn-lg border-light-subtle fs-3" onclick="location.reload()">Reload</button>
-            </div>`;*/
         }
     }
 });
@@ -214,52 +199,7 @@ submitButton.addEventListener("click", () => {
 
 //Function that hides the main Intro page and starts the quiz
 
-
-/*window.addEventListener("load", (event) => {
-    document.getElementById("intro").style.display = "flex";
-    document.getElementById("quiz").style.display = "none";
-    console.log("page is fully loaded");
-  });*/
-
-/*let x = true;
-const introDisplay = document.getElementById("intro").style.display
-const quizDisplay = document.getElementById("quiz").style.display
-
-  
-  
-  document.getElementById("quizStart").addEventListener("click", (event) => {
-    console.log("START BUTTON PRESSED")
-   if( x=== false) {
-    introDisplay = "flex"
-    quizDisplay = "none"
-    return x = true
-} else {
-    introDisplay = "none"
-    quizDisplay = "flex"
-    return x = false
-  }
-}); */
-
-/* function quizStart() {
-    document.getElementById("intro").style.display = "none"
-    document.getElementById("quiz").style.display = "flex"
-    console.log("You have started the quiz. Good luck finding your inner spirit animal!")
-    alert("You have started the quiz. Good luck!!!")
-} */
-
-
-let x = true;
-const introDisplay = document.getElementById("intro").style.display
-const quizDisplay = document.getElementById("quiz").style.display
-
 function hideElement() {
-    console.log("hiding the intro and loading the quiz")
-   if(x===false) {
-    introDisplay = "flex"
-    quizDisplay = "none"
-    return x = true
-} else {
-    introDisplay = "none"
-    quizDisplay = "flex"
-    return x = false
-}} 
+    document.getElementById("intro").style.display = "none";
+    quiz.style.display = "block";
+}
