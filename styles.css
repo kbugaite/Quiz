@@ -1,5 +1,5 @@
  body {
-   background-image: url('/images/abstract-heavy-blue-haze-liquid.jpg');
+   background-image: url('Images/abstract-heavy-blue-haze-liquid.jpg');
     background-size: cover;
   }
 .img {
@@ -49,16 +49,16 @@
 } 
 /* Different colour backgrounds for different classes of animals */
 #ursus{
-  background-image: url('/images/bia-w-a-SmkZz4aR-Ng-unsplash - yellow.jpg');
+  background-image: url('Images/bia-w-a-SmkZz4aR-Ng-unsplash - yellow.jpg');
 }
 #avis{
-  background-image: url('/images/bia-w-a-SmkZz4aR-Ng-unsplash - green.jpg');
+  background-image: url('Images/bia-w-a-SmkZz4aR-Ng-unsplash - green.jpg');
 }
 #canine{
-  background-image: url('/images/bia-w-a-SmkZz4aR-Ng-unsplash - blue.jpg');
+  background-image: url('Images/bia-w-a-SmkZz4aR-Ng-unsplash - blue.jpg');
 }
 #feline{
-  background-image: url('/images/bia-w-a-SmkZz4aR-Ng-unsplash - red.jpg');
+  background-image: url('Images/bia-w-a-SmkZz4aR-Ng-unsplash - red.jpg');
 }
 /* Styles of the text on the back of the flip-card */
 .flipCardText{
@@ -89,7 +89,7 @@ h1 {
 p {
     font-family: 'Sora', sans-serif;
     color: aliceblue;
-    font-size: 1.25em;
+    font-size: 1.4em;
     padding: 1em 2em 1em 2em;
   }
 .btn {
