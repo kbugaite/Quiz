@@ -103,29 +103,37 @@ function getSelected() {
 }
 let score = 0;
 
+
+//SCORE TRACKER
+
+
+/*
+function scoreCalc(quizQuestions[currentQuizIndex], currentQuizIndex, quizQuestions) {
+    return score = score + parseInt(document.getElementById("answer1").getAttribute("value"))
+} else if (answer == quizQuestions[currentQuizIndex].answer2) {
+    return score = score + parseInt(document.getElementById("answer2").getAttribute("value"))
+} else if (answer == quizQuestions[currentQuizIndex].answer3) {
+    return score = score + parseInt(document.getElementById("answer3").getAttribute("value"))
+} else if (answer == quizQuestions[currentQuizIndex].answer4) {
+    return score = score + parseInt(document.getElementById("answer4").getAttribute("value"))
+} */
+
+
+
+
+//AN EVENT LISTENER THAT TAKES THE USER TO ANOTHER QUESTION AND SHOWS THE RESULT
 submitButton.addEventListener("click", () => {
     const answer = getSelected()
     console.log("It's working")
     if (answer) {
-        if (answer == quizQuestions[currentQuizIndex].answer1) {
-            return score = score + parseInt(document.getElementById("answer1").getAttribute("value"))
-        } else if (answer == quizQuestions[currentQuizIndex].answer2) {
-            return score = score + parseInt(document.getElementById("answer2").getAttribute("value"))
-        } else if (answer == quizQuestions[currentQuizIndex].answer3) {
-            return score = score + parseInt(document.getElementById("answer3").getAttribute("value"))
-        } else if (answer == quizQuestions[currentQuizIndex].answer4) {
-            return score = score + parseInt(document.getElementById("answer4").getAttribute("value"))
-        }
-        console.log("Current score is: " + score + " and the type of score is - " + typeof(score))
         currentQuizIndex++
-        console.log("Current question is:" + currentQuizIndex++)
         if (currentQuizIndex < quizQuestions.length) {
             loadQuiz()
         } else {
 //This IF ELSE statement adds the answer to inner HTML based on the score
         if (score <= 12){ quiz.innerHTML = `<div class="container">
         <div class="row d-flex justify-content-center align-content-center">
-        <h2>You scored ${score}. This indicates your spirit animal is:</h2>
+        <h2>You scored ${score}. This indicates that your spirit animal is:</h2>
         <p> Your soul has a canine companion: a wolf, coyote or a dog.
         <br>
         People describe you as a faithful friend, loyal and even protective.
@@ -138,20 +146,55 @@ submitButton.addEventListener("click", () => {
         <button class="btn col-3 btn-dark btn-lg border-light-subtle fs-3" onclick="location.reload()">Reload</button>
         </div>
         </div>` }
-        else if (score >13 && score < 18){ quiz.innerHTML = `<div class="col">
+        else if (score >13 && score < 18){ quiz.innerHTML = `<div class="container">
+        <div class="row d-flex justify-content-center align-content-center">
         <h2>You scored ${score}. This indicates your spirit animal is:</h2>
-        <p> Your soul has an avian companion: an eagle, flamingo or a crow.
-        <button class="quizProceed btn btn-dark btn-lg border-light-subtle fs-3" onclick="location.reload()">Reload</button>
+        <p> This indicates that your soul has an avian companion: an eagle, flamingo or a crow.
+        <br>
+        Bird Spirit is the perfect symbol for freedom and perspective, because they fly high into the sky freely and “see” the bigger picture.
+        Bird's are not fighters – they lean toward self-survival and adaptation over a fist-to-cuffs any day.
+        <br>
+        People who's spirit animal is a bird have an affinity for being outdoors and an uncanny way of recognizing when danger is afoot.
+        Thanks to fast thinking and reflexes they can get out of harm’s way quickly, often warning others as they flee. 
+        </div>
+        <div class="row d-flex justify-content-center align-content-center">
+        <button class="btn col-3 btn-dark btn-lg border-light-subtle fs-3" onclick="location.reload()">Reload</button>
+        </div>
         </div>` }
-        else if (score >19 && score < 24){ quiz.innerHTML = `<div class="col">
-        <h2>You scored ${score}. This indicates your spirit animal is:</h2>
-        <p> Your soul has a feline companion: a lion, tiger or a house cat.
-        <button class="quizProceed btn btn-dark btn-lg border-light-subtle fs-3" onclick="location.reload()">Reload</button>
+        else if (score >19 && score < 24){ quiz.innerHTML = `<div class="container">
+        <div class="row d-flex">
+        <h2 >You scored ${score}. This indicates your spirit animal is:</h2>
+        <p> This indicates that your soul has a feline companion: a lion, tiger or a house cat.
+        <br>
+        The cat symbolizes grace, intelligence, cunning, and independence. It is a fascinating animal that cultures around the world have long revered. They are not content to be controlled or tamed, preferring to live on their own terms.
+        <br>
+        If your spirit animal is a cat, it means that you are a very independent person. You like to do things your own way and on your own terms.
+        You are also probably quite clever and resourceful. Friends describe you as being very self-sufficient.
+        <br>
+        In addition to that, you love to live your life with a sense of curiosity. You are always exploring and trying new things. Even if it pushes you outside of your comfort zone, you are always up for the challenge.
+        You view life as an adventure, and you are always looking for new experiences.
+        </div>
+        <div class="row d-flex justify-content-center align-content-center">
+        <button class="btn col-3 btn-dark btn-lg border-light-subtle fs-3" onclick="location.reload()">Reload</button>
+        </div>
         </div>` }
-        else { quiz.innerHTML = `<div class="col">
+        else { quiz.innerHTML = `<div class="container">
+        <div class="row d-flex justify-content-center align-content-center">
         <h2>You scored ${score}. This indicates your spirit animal is:</h2>
-        <p> Your soul has a ursus companion: a black, polar bear or a panda.
-        <button class="quizProceed btn btn-dark btn-lg border-light-subtle fs-3" onclick="location.reload()">Reload</button>
+        <p> This indicates that your soul has an ursus companion: a black, polar bear or a panda.
+        <br>
+        When Bear as a Spirit Animal comes to stand beside you, there’s the assurance of renewed power and courage.
+        Whatever adversity you face, Bear holds you firm and keeps you grounded until hardships pass. Bear Spirit is restorative and recuperative.
+        <br>
+        Bear people growl at adversity and come to the rescue of those in their circle in times of need.
+        If your spirit animal belongs to the Ursus family, you have natural fortitude, assurance, and aptitude when taking on leadership roles.
+        <br>
+        However, sometimes it also means that you must also care for the self, often by taking regular retreats to refuel.
+        The one caution of which to remain aware is that Bear people have hot tempers. Be careful not to attack without just cause. Discernment is your ally.
+        </div>
+        <div class="row d-flex justify-content-center align-content-center">
+        <button class="btn col-3 btn-dark btn-lg border-light-subtle fs-3" onclick="location.reload()">Reload</button>
+        </div>
         </div>` }
             /*Text to add: `<div class="col">
             <h2>You scored ${score}. This indicates your spirit animal is:</h2>
@@ -172,7 +215,32 @@ submitButton.addEventListener("click", () => {
 //Function that hides the main Intro page and starts the quiz
 
 
-/*function quizStart() {
+/*window.addEventListener("load", (event) => {
+    document.getElementById("intro").style.display = "flex";
+    document.getElementById("quiz").style.display = "none";
+    console.log("page is fully loaded");
+  });*/
+
+/*let x = true;
+const introDisplay = document.getElementById("intro").style.display
+const quizDisplay = document.getElementById("quiz").style.display
+
+  
+  
+  document.getElementById("quizStart").addEventListener("click", (event) => {
+    console.log("START BUTTON PRESSED")
+   if( x=== false) {
+    introDisplay = "flex"
+    quizDisplay = "none"
+    return x = true
+} else {
+    introDisplay = "none"
+    quizDisplay = "flex"
+    return x = false
+  }
+}); */
+
+/* function quizStart() {
     document.getElementById("intro").style.display = "none"
     document.getElementById("quiz").style.display = "flex"
     console.log("You have started the quiz. Good luck finding your inner spirit animal!")
@@ -180,16 +248,18 @@ submitButton.addEventListener("click", () => {
 } */
 
 
-/* let x = false;
+let x = true;
+const introDisplay = document.getElementById("intro").style.display
+const quizDisplay = document.getElementById("quiz").style.display
+
 function hideElement() {
-   if(x==false) {
-    document.getElementById("intro").style.display = "flex"
-    document.getElementById("quiz").style.display = "none"
-    return x = false
-    console.log(x)
-} else {
-    document.getElementById("intro").style.display = "none"
-    document.getElementById("quiz").style.display = "flex"
+    console.log("hiding the intro and loading the quiz")
+   if(x===false) {
+    introDisplay = "flex"
+    quizDisplay = "none"
     return x = true
-    console.log(x)
-}}*/
+} else {
+    introDisplay = "none"
+    quizDisplay = "flex"
+    return x = false
+}} 
